@@ -1,9 +1,271 @@
 <!DOCTYPE html>
-<html lang="de">
-  <head>
-    <title>CO2-Emissionen</title>
-  </head>
-  <body>
-    <h1>CO2-Emissionen</h1>
-  </body>
+<html lang="en">
+
+<style type="text/css">
+  header { background-color: rgb(230, 248, 230); }
+  header nav ul { text-align: right; }
+  header nav ul li { display: inline; }
+  main nav {flex-direction: column; float: left;}
+  main div #content {float: right; }
+  footer { clear: both; background-color: rgb(230, 248, 230); }
+  footer nav ul { text-align: center; }
+  footer nav ul li { display: inline; }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate-Restore</title>
+    <script src="jquery/jquery-1.8.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="jsgrid-1.5.3/dist/jsgrid.min.css">
+    <link rel="stylesheet" href="jsgrid-1.5.3/dist/jsgrid-theme.min.css">
+    <script src="jsgrid-1.5.3/dist/jsgrid.min.js"></script>
+    
+
+
+    <nav class="py-2 bg-body-tertiary border-bottom">
+        <div class="container">
+          <ul class="nav me-auto">
+            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="https://www.instagram.com/Climate-Restore" class="nav-link link-body-emphasis">Instagram</a></li>
+            <li class="nav-item"><a href="https://www.Facebook.com/Climate-Restore" class="nav-link link-body-emphasis">Facebook</a></li>
+            <li class="nav-item"><a href="ÜberUns.html" class="nav-link link-body-emphasis">Über Uns</a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <header class="py-3 mb-4 border-bottom">
+        <div class="container d-flex flex-wrap justify-content-center">
+          <div class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-decoration-none">
+            <img alt="CR" src="logo.png" width="50" height="32">
+            <span class="fs-4">Climate-Restore</span>
+          </div>
+          <form id="search-form" class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+            <div class="input-group">
+            <input id="search-input" type="search" class="form-control" placeholder="Suche..." aria-label="Search">
+            <button class="btn btn-outline-dark text-dark" type="submit">Suchen</button>
+          </div>
+          </form>
+          <div id="search-results">
+        </div>
+      </header>
+</head>
+
+
+<body>
+<main>
+  <nav>
+  <div class="d-flex flex-column p-3">
+    <a class="d-flex text-primary-emphasis text-decoration-none">
+      <span class="fs-4">Navigation</span>
+    </a>
+    <ul class="nav flex-column mb-auto">
+      <li class="nav-item">
+        <a href="#" class="nav-link link-body-emphasis" aria-current="page">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="dashboard.html" class="nav-link link-body-emphasis">
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a href="Zahlenundfakten.html" class="nav-link link-body-emphasis">
+          Zahlen und Fakten
+        </a>
+      </li>
+      <li>
+        <a href="Organisationen.html" class="nav-link link-body-emphasis">
+          Organisationen
+        </a>
+      </li>
+      <li>
+        <a href="FAQs.html" class="nav-link link-body-emphasis">
+          FAQs
+        </a>
+      </li>
+    </ul>
+</div>
+</nav>
+
+
+<section class="container-fluid">
+  <div class="p-3 text-primary-emphasis text-center rounded-3">
+    <h1>Willkommen auf der Homepage von Climate-Restore</h1>
+    <h4>Wir setzen und ein und kämpfen für den Klimaschutz!</h4>
+  </div>
+</div>
+
+<section class="container-fluid">
+  <div class="p-3 text-primary-emphasis text-center rounded-3">
+    <h3>Wir organisieren Projekte, Spendenaktionen und stehen Ihnen mit unserer Hilfe zur Seite</h3>
+  </div>
+</div>
+
+
+<section class="container-fluid">
+  <div class= "card">
+  <div class="card-header">
+  <h3 class="card-title">Tabelle</h3>
+  </div>
+  
+
+  <div id="jsGrid" class="jsgrid" style="position: relative; height: 70%; width: 100%;">
+    <div class="jsgrid-grid-header jsgrid-header-scrollbar">
+      <table class="jsgrid-table">
+        <tbody>
+          <tr class="jsgrid-header-row">
+            <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 150px;">Kategorie</th>
+            <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 150px;">Name</th>
+            <th class="jsgrid-header-cell jsgrid-align-right jsgrid-header-sortable" style="width: 50px;">CO²-Emissionen in Mio t</th>
+          </tr>
+          <tr class="jsgrid-filter-row">
+            <td class="jsgrid-cell" style="width: 150px;">
+              <input type="text" aria-label="search"></td>
+              <td class="jsgrid-cell" style="width: 150px;">
+                <input type="text" aria-label="search"></td>
+                <td class="jsgrid-cell jsgrid-align-right" style="width: 50px;">
+                  <input type="number" aria-label="search"></td>
+                </tr>
+                <tr class="jsgrid-insert-row" style="display: none;">
+                  <td class="jsgrid-cell" style="width: 150px;">
+                    <input type="text" aria-label="search"></td>
+                    <td class="jsgrid-cell" style="width: 150px;">
+                      <input type="text" aria-label="search"></td>
+                      <td class="jsgrid-cell jsgrid-align-right" style="width: 50px;">
+                        <input type="number" aria-label="search"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+               
+</div>
+
+<script>
+
+
+      var clients = [
+        { "Kategorie": "Land", "Name": "Amerika", "CO²-Emissionen in Mio t": 25 },
+        { "Kategorie": "Land", "Name": "Deutschland", "CO²-Emissionen in Mio t": 45 },
+        { "Kategorie": "Land", "Name": "China", "CO²-Emissionen in Mio t": 29 },
+        { "Kategorie": "Land", "Name": "Süd-Korea", "CO²-Emissionen in Mio t": 56 },
+        { "Kategorie": "Land", "Name": "Polen", "CO²-Emissionen in Mio t": 32 },
+        { "Kategorie": "Unternehmen", "Name": "Exxon", "CO²-Emissionen in Mio t": 90},
+        { "Kategorie": "Unternehmen", "Name": "General Motors", "CO²-Emissionen in Mio t": 422},
+        { "Kategorie": "Unternehmen", "Name": "Walmart", "CO²-Emissionen in Mio t": 65},
+        { "Kategorie": "Unternehmen", "Name": "Mercedes", "CO²-Emissionen in Mio t": 11},
+        { "Kategorie": "Unternehmen", "Name": "Shell", "CO²-Emissionen in Mio t": 234},
+
+        
+    ];
+
+
+  $(function() {
+    
+      $("#jsGrid").jsGrid({
+          height: "70%",
+          width: "100%",
+          sorting: true,
+          selecting: false,
+          filtering: true, 
+
+          data: clients,
+        
+
+          
+
+          fields: [
+              { name: "Kategorie", type: "text", width: 150 },
+              { name: "Name", type: "text", width: 150 },
+              { name: "CO²-Emissionen in Mio t", type: "number", width: 50 },
+              
+
+          ]
+      });
+ 
+  });
+
+</script>
+
+</main>
+
+
+<footer class= "mt-5 py-2 border-bottom">
+  <div class="container-fluid">
+  <nav>
+    <ul class= "nav me-auto">
+      <li><a href="Datenschutz.html" class="nav-link link-body-emphasis px-2">Datenschutz</a></li>
+      <li><a href="Impressum.html" class="nav-link link-body-emphasis px-2">Impressum</a></li>
+    </ul>
+  </nav>
+</div>
+</footer>
+
+<script>
+  var data = [
+      { title: "Spendenaktionen", content: "Folgende Spendenaktionen laufen zurzeit..." },
+      { title: "Kontakt", content: "Kontaktinformationen"},
+      { title: "Social Media", content: "Facebook, Instagram..." },
+      { title: "Über uns", content: "Informationen über unsere Organisation..." },
+      { title: "Fakten", content: "Hier finden Sie Fakten über unsere Organisation" },
+      { title: "Impressum", content: "Informationen zum Impressum..." },
+      { title: "Datenschutz", content: "Informationen zum Datenschutz..." },
+      { title: "Organisationen", content: "Folgende Partnerorganisationen arbeiten mit uns..." },
+      { title: "FAQ", content: "Häufig gestellte Fragen und Antworten" },
+      { title: "Hilfe", content: "Brauchen Sie Hilfe?" }
+
+  ];
+
+  var searchForm = document.getElementById("search-form");
+  var searchInput = document.getElementById("search-input");
+  var searchResults = document.getElementById("search-results");
+
+  searchForm.addEventListener("submit", function (e) {
+      e.preventDefault(); 
+
+      var searchTerm = searchInput.value.toLowerCase();
+      var results = performSearch(searchTerm);
+
+      displaySearchResults(results);
+  });
+
+  function performSearch(searchTerm) {
+      var results = [];
+
+      for (var i = 0; i < data.length; i++) {
+          var item = data[i];
+          if (item.title.toLowerCase().includes(searchTerm) || item.content.toLowerCase().includes(searchTerm)) {
+              results.push(item);
+          }
+      }
+
+      return results;
+  }
+
+  function displaySearchResults(results) {
+      searchResults.innerText = "";
+
+      if (results.length === 0) {
+          searchResults.innerText = "Keine Ergebnisse vorhanden";
+          return;
+      }
+
+      var ul = document.createElement("ul");
+
+      for (var i = 0; i < results.length; i++) {
+          var item = results[i];
+          var li = document.createElement("li");
+          li.innerText = item.content;
+          ul.appendChild(li);
+      }
+
+      searchResults.appendChild(ul);
+  }
+</script>
+
+</body>
 </html>
